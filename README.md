@@ -92,6 +92,8 @@
   - ChatGPT
   - Gemini
 - Stripe
+- その他
+  - フォント: NotoSanJP
 
 ## アーキテクチャ
 
