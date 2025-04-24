@@ -9,15 +9,21 @@
 ### 学習のオープンソース化プロダクト
 誰でも利用できる学びのパーソナルAIエージェント
 
+![image](https://github.com/user-attachments/assets/7eeca37f-2374-40f6-bc1e-7bc5f33e1f2a)
+
+
 [WIP: Apps サイト](https://tokumei-devs.vercel.app/)
 
 </div>
 
 ## Phase1. WIP Status
 - [x] サービス設計
-- [x] 基本設計
+- [ ] 基本設計
   - [ ] 技術選定
   - [ ] アーキテクチャ
+- [ ] 実現性検証
+  - [ ] 教材生成試験
+  - [ ] UI/UX サポート試験 (MCP)
 - [ ] UI設計 (Figma)
 - [ ] 実装設計
   - [ ] テーブル設計
