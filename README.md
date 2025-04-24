@@ -38,8 +38,8 @@
 * 個人の興味やレベルに沿った学習🚀
 * LLMを使用した教科書の自動生成📖
 * 直観的なノートシステムの連携📒
-* タブレット/モバイルベースでiOS/Android対応のインストール可能なPWA対応📱
-* OSSにすることで安全性/公平性の担保と再利用可能なシステム🔒
+* タブレット/モバイルでiOS/Android対応のPWAでのネイティブ対応📱
+* OSSによる安全性/公平性の担保と再利用可能性🔒
 * 肯定的な精神的寄り添いによる自己肯定のサポート🩹
 
 ## こだわる部分 (Must)
@@ -73,6 +73,7 @@
   - HeroUI (TailWindCSS + FramerMotion)
   - Jotai (状態管理)
   - drizzle (ORM)
+  - next-pwa (PWA)
   - vitest (ロジックの単体テスト)
   - next-test-api-route-handler (APIテスト)
   - OpenAPI (RESTful-API)
