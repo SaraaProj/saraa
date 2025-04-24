@@ -1,6 +1,7 @@
 <div align="center">
 
-<img src="https://github.com/user-attachments/assets/f660b332-ed39-43aa-9f7e-fa2e41903d8e" width="200" />
+![image](https://github.com/user-attachments/assets/e21972db-83db-477a-9525-0f0fcabc64e7)
+
 
 # Saraa in Study Apps (随時更新)
 
