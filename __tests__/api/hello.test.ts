@@ -1,3 +1,4 @@
+import "../../asyncLocalStorageSetup";
 import { expect, test } from "vitest";
 import * as appHandler from "../../app/api/hello/route";
 import { testApiHandler } from "next-test-api-route-handler";
