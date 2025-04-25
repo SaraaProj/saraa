@@ -22,10 +22,10 @@ jobs:
         run: bun install
 
       - name: Check lint
-        run: bun lint
+        run: bun run lint
 
       - name: Build
-        run: bun build
+        run: bun run build
 
       - name: Vitest run
-        run: bun test
+        run: bun run test
