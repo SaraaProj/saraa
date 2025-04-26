@@ -5,7 +5,7 @@ import { testApiHandler } from "next-test-api-route-handler";
 
 /**
  * NOTE: サンプルのAPIルートのテスト
- * SampleAPIで messageが"Hello, world!"であるか
+ * HelloAPIで messageが"Hello, world!"であるか
  */
 test("GET /api/hello", async () => {
   await testApiHandler({

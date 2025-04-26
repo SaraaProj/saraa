@@ -108,6 +108,10 @@ saraa
      |- (auth) # 認証済みページ
          |- actions # ページ専用アクション
          |- ui # ページ専用UI
+           |- **.tsx
+           |- props.ts # uiの読み取らせる用 ()
+         prop.ts # ページProps(AIに読み取らせるよう)
+         page.tsx
      |- (public) # 認証なしページ
   |- src # 共通ソース
     |- hooks
@@ -126,6 +130,27 @@ saraa
          |- schemas
          |- migrations
          |- seeds
+```
+
+### NUI -> To(MCP) -> UI
+音声やタッチで
+ユーザーのやりたいことを探索する仕組み
+
+```ts
+/**
+ * Hello + 任意文字を表示するページProps
+ * @public 公開 - アクセスの公開設定
+ * @property params: { id: number } - 
+ * @property searchParams: { dataId: number; } - 
+ */
+type HelloPageProps = {
+  params: {
+    id: number
+  };
+  searchParams: {
+    dataId: number;
+  }
+}
 ```
 
 ## 備考
