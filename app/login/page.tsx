@@ -1,10 +1,9 @@
 "use client";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { signIn, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { CustomButton } from "@/components/Button";
 import { loginAction } from "./actions/singIn";
-import { Button } from "@heroui/react";
 
 export default function LoginPage() {
   const { status } = useSession();
