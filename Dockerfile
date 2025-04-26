@@ -21,7 +21,8 @@ COPY tailwind.config.ts .
 COPY postcss.config.mjs .
 COPY next.config.ts .
 COPY asyncLocalStorageSetup.ts .
-
+COPY polyfills.ts .
+COPY .npmrc .
 
 # ポートを公開
 EXPOSE 3001

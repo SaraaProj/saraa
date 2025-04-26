@@ -8,11 +8,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
     "test": "vitest"
   },
   "dependencies": {
     "@ducanh2912/next-pwa": "^10.2.9",
     "@heroui/react": "^2.7.6",
+    "@next/env": "^15.3.1",
     "@stripe/stripe-js": "^7.2.0",
     "dotenv": "^16.5.0",
     "drizzle-orm": "^0.43.1",
@@ -26,7 +30,8 @@
     "postgres": "^3.4.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-hot-toast": "^2.5.2"
+    "react-hot-toast": "^2.5.2",
+    "tts-react": "^4.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
