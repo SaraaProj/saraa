@@ -1,17 +1,17 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import fs from "fs";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import path from "path";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-console.log("__dirname", __dirname);
-console.log("__filename", __filename);
 const appDir = path.join(__dirname, "../../app");
-console.log("appDir", appDir);
 
 function walkDir(dir: string, callback: (filePath: string) => void) {
   const files = fs.readdirSync(dir);
@@ -45,9 +45,25 @@ const exportPages = () => {
     }
   });
 
+  const noAuthPagePaths = []
+  const apiRoutes = []
+  const authPagePaths = []
   pageFiles.forEach((file) => {
-    console.log(` - /${file}`);
+    if (file.startsWith("/api") || file.endsWith("route.ts")) {
+      apiRoutes.push(file);
+    } else if (file.endsWith("page.tsx")) {
+      if (file.startsWith("(auth)")) {
+        authPagePaths.push(file);
+      } else {
+        noAuthPagePaths.push(file);
+      }
+    }
   });
+  
+  console.log(`📝 Total pages found: ${pageFiles.length}`);
+  console.log(`📝 Total noAuth pages found: ${noAuthPagePaths.length}`);
+  console.log(`📝 Total auth pages found: ${authPagePaths.length}`);
+  console.log(`📝 Total api routes found: ${apiRoutes.length}`);
 
   console.log(`📝 Total pages found: ${pageFiles.length}`);
 };
