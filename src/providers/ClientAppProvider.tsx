@@ -2,7 +2,11 @@
 import { HeroUIProvider } from "@heroui/react";
 
 const ClientAppProvider = ({ children }: { children: React.ReactNode }) => {
-  return <HeroUIProvider>{children}</HeroUIProvider>;
+  return (
+    <HeroUIProvider>
+      <div className="text-secondary">{children}</div>
+    </HeroUIProvider>
+  );
 };
 
 export { ClientAppProvider };

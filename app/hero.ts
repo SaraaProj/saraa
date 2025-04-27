@@ -1,7 +1,7 @@
 import { heroui } from "@heroui/react";
 
 export default heroui({
-  addCommonColors: true,
+  addCommonColors: false,
   themes: {
     light: {
       colors: {
