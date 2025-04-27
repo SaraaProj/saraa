@@ -1,8 +1,7 @@
-const { heroui } = require("@heroui/react");
+import type { Config } from "tailwindcss";
+import { heroui } from "@heroui/react";
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  mode: "jit",
+const config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -20,11 +19,18 @@ module.exports = {
       animation: {
         slowspin: "slowspin 4s linear infinite",
       },
+      colors: {
+        primary: {
+          DEFAULT: "#0060A8",
+          foreground: "#F6F2EE",
+        },
+      },
     },
   },
   darkMode: "class",
   plugins: [
     heroui({
+      addCommonColors: false,
       themes: {
         light: {
           colors: {
@@ -57,4 +63,6 @@ module.exports = {
       },
     }),
   ],
-};
+} satisfies Config;
+
+export default config;
