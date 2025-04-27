@@ -153,6 +153,17 @@ type HelloPageProps = {
 }
 ```
 
+## デザイン
+
+### Colors
+| カラー名 | HEX値   | ダークモード |
+|--------|:-------|---------------------|
+| primary (main)    | #0060A8 | #66B2FF （ライトブルー） |
+| secondary (sub)    | #616161 | #BBBBBB （淡いグレー文字） |
+| foreground    | #1E1E1E | #F6F2EE |
+| background    | #F6F2EE | #1E1E1E |
+
+
 ## 備考
 
 このプロダクトは、個人的興味と実験的な取り組みによるものです。
