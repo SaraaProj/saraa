@@ -5,10 +5,12 @@ import { useSession } from "next-auth/react";
 import { CustomButton } from "@/components/Button";
 import { loginAction } from "./actions/singIn";
 import { FaGoogle, FaLine } from "react-icons/fa";
+import { usePWA } from "@/providers/PWAProvider";
 import Image from "next/image";
 
 export default function LoginPage() {
   const { status } = useSession();
+  const { InstallApplication } = usePWA();
   const router = useRouter();
   const getCallbackUrl = () => {
     const url = new URL(window.location.href);
@@ -73,7 +75,7 @@ export default function LoginPage() {
 
         {/** アプリの取得 */}
         <div className="mt-4"> 
-          <span className="text-primary text-lg">
+          <span className="text-primary text-lg" onClick={InstallApplication}>
             アプリの取得
           </span>
         </div>

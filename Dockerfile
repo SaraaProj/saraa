@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y libc6 && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 
 # アプリケーションのソースコードをコピー
-COPY package.json bun.lockb ./
+COPY package.json bun.lock ./
 RUN bun install --frozen-lockfile
 
 ENV LANG=C.UTF-8 \
@@ -22,10 +22,9 @@ COPY postcss.config.mjs .
 COPY next.config.ts .
 COPY asyncLocalStorageSetup.ts .
 COPY polyfills.ts .
-COPY .npmrc .
 
 # ポートを公開
-EXPOSE 3001
+EXPOSE 3000
 
 # アプリケーションをデフォルトで起動
 CMD ["bun", "run", "dev"]

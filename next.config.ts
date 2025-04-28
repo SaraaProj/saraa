@@ -4,6 +4,7 @@ import { startSetup } from "./lib/setup/index";
 
 const withPWA = nextPWA({
   dest: "public",
+  // 開発環境ではPWAを無効化
   // @ts-ignore
   disable: process.env.NODE_ENV === "development",
 });
