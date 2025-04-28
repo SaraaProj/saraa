@@ -20,6 +20,7 @@ export const users = pgTable("users", {
   gender: genderEnum("gender"),
   job: text("job").notNull(),
   birthDate: date("birth_date"),
+  coins: integer("coins").notNull().default(0), // 所有コイン
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
