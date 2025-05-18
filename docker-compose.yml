@@ -1,25 +1,4 @@
 services:
-  # Saraa
-  saraa:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    env_file:
-      - .env
-    environment:
-      POSTGRES_URL: "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:${POSTGRES_PORT}/${POSTGRES_NAME}"
-    image: saraa
-    container_name: saraa
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./src:/app/src
-      - ./public:/app/public
-      - ./app:/app/app
-      - ./lib:/app/lib
-    networks:
-      - app_network
-
   # DB
   saraa_postgres:
     image: postgres:13
