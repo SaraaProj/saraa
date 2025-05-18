@@ -15,6 +15,8 @@ ENV LANG=C.UTF-8 \
 # アプリケーションのソースコードをコピー
 COPY src ./src
 COPY public ./public
+COPY app ./app
+COPY lib ./lib
 COPY drizzle.config.ts .
 COPY tsconfig.json .
 COPY tailwind.config.ts .
