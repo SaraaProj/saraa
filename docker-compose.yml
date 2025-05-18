@@ -11,15 +11,12 @@ services:
     image: saraa
     container_name: saraa
     ports:
-      - "3001:3001"
+      - "3000:3000"
     volumes:
       - ./src:/app/src
       - ./public:/app/public
       - ./app:/app/app
       - ./lib:/app/lib
-    restart: always
-    tty: true
-    stdin_open: true
     networks:
       - app_network
 

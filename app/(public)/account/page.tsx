@@ -7,16 +7,23 @@ import { useState } from "react";
 import { FaUser, FaBirthdayCake, FaBriefcase } from "react-icons/fa";
 import { SquareRadio } from "@/components/SquareRadio";
 import { CustomSelect } from "@/components/Select";
+import { useSession } from "next-auth/react";
+import { db } from "@/db";
+import { users } from "@/db/schema";
+import { eq } from "drizzle-orm";
+import { useRouter } from "next/navigation";
 
 export default function SignUpPage() {
+  const { data: session } = useSession();
+  const router = useRouter();
   const [nickname, setNickname] = useState("");
   const [birthday, setBirthday] = useState("");
   const [gender, setGender] = useState("");
   const [job, setJob] = useState<Set<string>>(new Set([]));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // ここでバリデーションやAPI送信など
+
   };
 
   return (

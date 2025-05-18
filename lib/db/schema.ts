@@ -10,6 +10,7 @@ import {
 } from "drizzle-orm/pg-core";
 
 export const genderEnum = pgEnum("gender", ["male", "female"]);
+export const userStatusEnum = pgEnum("user_status", ["pending", "completed"]);
 
 /** ユーザー */
 export const users = pgTable("users", {
@@ -21,11 +22,12 @@ export const users = pgTable("users", {
   job: text("job").notNull(),
   birthDate: date("birth_date"),
   coins: integer("coins").notNull().default(0), // 所有コイン
+  status: userStatusEnum("status").notNull().default("pending"),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
 
-/** 資料 */
+/** 教材 */
 export const materials = pgTable("materials", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
