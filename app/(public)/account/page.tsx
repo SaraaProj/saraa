@@ -1,5 +1,5 @@
 "use client";
-import { Input, RadioGroup, Radio, Button } from "@heroui/react";
+import { RadioGroup } from "@heroui/react";
 import { CustomButton } from "@/components/Button";
 import { FaFemale, FaMale } from "react-icons/fa";
 import { CustomInput } from "@/components/Input";
@@ -8,27 +8,38 @@ import { FaUser, FaBirthdayCake, FaBriefcase } from "react-icons/fa";
 import { SquareRadio } from "@/components/SquareRadio";
 import { CustomSelect } from "@/components/Select";
 import { useSession } from "next-auth/react";
-import { db } from "@/db";
-import { users } from "@/db/schema";
-import { eq } from "drizzle-orm";
-import { useRouter } from "next/navigation";
+import { signUp } from "./_actions/signUp";
+import Link from "next/link";
 
 export default function SignUpPage() {
-  const { data: session } = useSession();
-  const router = useRouter();
+  const { data: session, status } = useSession();
   const [nickname, setNickname] = useState("");
   const [birthday, setBirthday] = useState("");
   const [gender, setGender] = useState("");
   const [job, setJob] = useState<Set<string>>(new Set([]));
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-  };
+  if (status === "authenticated" && session) {
+    return (
+      <>
+        <div>
+          <div
+            className="flex flex-col h-full items-center justify-between px-4 py-12"
+            style={{ minHeight: "100vh" }}
+          >
+            <Link href="/">ホームへ</Link>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <form
-      onSubmit={handleSubmit}
+      onSubmit={(e) => {
+        console.log(e);
+        const formData = new FormData(e.target as HTMLFormElement);
+        // signUp(formData);
+      }}
       className="flex flex-col h-full items-center justify-between px-4 py-12"
       style={{ minHeight: "100vh" }}
     >

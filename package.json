@@ -25,6 +25,7 @@
     "drizzle-orm": "^0.43.1",
     "drizzle-zod": "^0.7.1",
     "framer-motion": "12.9.2",
+    "fs": "^0.0.1-security",
     "jotai": "^2.12.3",
     "next": "15.3.2",
     "next-auth": "^5.0.0-beta.27",
